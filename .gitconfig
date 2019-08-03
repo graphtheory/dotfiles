@@ -1,0 +1,44 @@
+[alias]
+	aliases = "!git config -l | grep alias | cut -c 7-"
+	amend = "!git add . && git commit --amend --no-edit"
+	branches = branch -a
+	hist = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+	new = checkout -b
+	remotes = remote -v
+	save = "!git add . && git commit -m"
+	stashes = stash list
+	tags = tag -l
+	whois = !sh -c 'git log -i -1 --author=\"$1\" --pretty=\"format:%an <%ae>\"' -
+	wip = commit -am "WIP"
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[core]
+	excludesfile = ~/.gitignore
+	editor = code --wait
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[push]
+	default = simple
+[user]
+	name = John Zetterström
+	email = john.zetterstrom@gmail.com
