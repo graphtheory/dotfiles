@@ -1,0 +1,124 @@
+[
+    {
+        "key": "cmd+shift+l",
+        "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+r c",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REACT_COMPONENT"
+        }
+    },
+    {
+        "key": "cmd+r e",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REACT_EXPORT_INDEX"
+        }
+    },
+    {
+        "key": "cmd+shift+r e",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REACT_EXPORT_DEFAULT"
+        }
+    },
+    {
+        "key": "cmd+r b",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REACT_HANDLER_CONSTRUCTOR"
+        }
+    },
+    {
+        "key": "cmd+r l",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REACT_LIFECYCLE_EVENTS"
+        }
+    },
+    {
+        "key": "cmd+r d",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REACT_DIV_STYLE"
+        }
+    },
+    {
+        "key": "cmd+r a",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REDUX_ACTION"
+        }
+    },
+    {
+        "key": "cmd+r p",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REDUX_CONSTANTS_PROMISES"
+        }
+    },
+    {
+        "key": "cmd+r r",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REDUX_REDUCER"
+        }
+    },
+    {
+        "key": "cmd+r s",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REDUX_SELECTOR"
+        }
+    },
+    {
+        "key": "cmd+h 1",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REACT_HANDLER_BODY_SET_STATE"
+        }
+    },
+    {
+        "key": "cmd+h 2",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REACT_HANDLER_BODY_ONCHANGE"
+        }
+    },
+    {
+        "key": "cmd+h 3",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "langId": "javascriptreact",
+            "name": "REACT_HANDLER_BODY_EVENT"
+        }
+    }
+]

@@ -1,0 +1,206 @@
+{
+	"REACT_COMPONENT": {
+		"scope": "javascriptreact",
+		"prefix": "rcomp",
+		"body": [
+			"import React, { Component } from \"react\";",
+			"import styles from \"./$TM_FILENAME_BASE.css\";",
+			"// import { connect } from \"react-redux\";",
+			"// import ImmutablePropTypes from \"react-immutable-proptypes\";",
+			"// import PropTypes from \"prop-types\";",
+			"// import cx from 'classnames';",
+			"",
+			"class $TM_FILENAME_BASE extends Component {",
+			"\tstatic propTypes = {",
+			"\t};",
+			"",
+			"\tconstructor(props) {",
+			"\t\tsuper(props);",
+			"\t\tthis.state = {};",
+			"\t}",
+			"",
+			"\trender() {",
+			"\t\treturn <div className={styles.$TM_FILENAME_BASE}></div>",
+			"\t}",
+			"}",
+			"",
+			"const mapStateToProps = state => ({",
+			"});",
+			"",
+			"export default connect(mapStateToProps)($TM_FILENAME_BASE);",
+			""
+		],
+		"description": "React component"
+	},
+	"REACT_EXPORT_INDEX": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "react_index_export",
+		"body": [
+			"export { ${TM_DIRECTORY/^.+\\/(.*)$/$1/} } from \"./${TM_DIRECTORY/^.+\\/(.*)$/$1/}\";"
+		]
+	},
+	"REACT_EXPORT_DEFAULT": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "react_index_export",
+		"body": [
+			"export default from \"./${TM_DIRECTORY/^.+\\/(.*)$/$1/}\";"
+		]
+	},
+	"REACT_HANDLER_CONSTRUCTOR": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "cbind",
+		"body": [
+			"this.handle$1 = this.handle$1.bind(this);",
+		],
+		"description": "Handler constructor"
+	},
+	"REACT_HANDLER_BODY_SET_STATE": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "react_handle_1",
+		"body": [
+			"handleToggle() {",
+			"\tthis.setState(state => ({...state, is$1: !state.is$1}));",
+			"}",
+			""
+		],
+		"description": "Handler body with set state"
+	},
+	"REACT_HANDLER_BODY_ONCHANGE": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "react_handle_2",
+		"body": [
+			"handleChange(item) {",
+			"\tthis.props.onChange(item);",
+			"}",
+			""
+		],
+		"description": "Handler body with props onChange"
+	},
+	"REACT_HANDLER_BODY_EVENT": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "react_handle_3",
+		"body": [
+			"handleEvent(e) {",
+			"\te.preventDefault();",
+			"\tthis.props.onChange(e.target.value);",
+			"}",
+			""
+		],
+		"description": "Handler body with change"
+	},
+	"REACT_LIFECYCLE_EVENTS": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "react_lifecycle",
+		"body": [
+			"componentDidMount() {",
+			"",
+			"}",
+			"",
+			"componentWillUnmount() {",
+			"",
+			"}",
+			""
+		],
+		"description": "Adds the current supported lifecycle methods"
+	},
+	"REACT_DIV_STYLE": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "react_div_style",
+		"body": [
+			"<div className={styles.$1}></div>"
+		],
+		"description": "Adds the current supported lifecycle methods"
+	},
+	"REDUX_ACTION": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "raction",
+		"body": [
+			"import { ${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g} } from './constants';",
+			"import xhr from './xhr';",
+			"",
+			"export function $1(id) {",
+			"\treturn dispatch => {",
+			"\t\tdispatch({ type: ${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g}.PENDING, payload: taskId });",
+			"",
+			"\t\treturn xhr",
+			"\t\t\t.$1(taskId)",
+			"\t\t\t.then(payload => dispatch({ type: ${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g}.FULFILLED, payload }))",
+			"\t\t\t.catch(payload => dispatch({ type: ${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g}.REJECTED, payload }));",
+			"\t};",
+			"}",
+			""
+		],
+		"description": "Redux action"
+	},
+	"REDUX_CONSTANTS_PROMISES": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "rconst",
+		"body": [
+			"import { apiContext } from 'api/lib';",
+			"import { createPromiseTypes } from 'store/lib';",
+			"import { ROOT_URL as PARENT_URL } from '../constants';",
+			"",
+			"$LINE_COMMENT Constants",
+			"export const NAME = 'reportToTech';",
+			"export const ROOT_URL = `\\${PARENT_URL}/report`;",
+			"export const $1_CONTEXT = apiContext(NAME);",
+			"",
+			"$LINE_COMMENT Promise constants",
+			"export const $1 = createPromiseTypes(",
+			"\t$1_CONTEXT(),",
+			"\t'$1',",
+			");",
+			""
+		],
+		"description": "Redux constants"
+	},
+	"REDUX_REDUCER": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "rreduce",
+		"body": [
+			"import { Record } from \"immutable\";",
+			"import { $1 } from \"./constants\";",
+			"",
+			"export const Model = Record({",
+			"\tmessage: \"\",",
+			"});",
+			"",
+			"const initialState = Model();",
+			"",
+			"const reducer = (state = initialState, action) => {",
+			"\tswitch (action.type) {",
+			"\t\tcase $1.PENDING:",
+			"\t\t\treturn state.set(\"message\", action.payload.message);",
+			"\t\tcase $1.REJECTED:",
+			"\t\t\treturn state.set(\"message\", action.payload.message);",
+			"\t\tcase $1.FULFILLED:",
+			"\t\t\treturn state.set(\"message\", action.payload.message);",
+			"\t\tdefault:",
+			"\t\t\treturn state;",
+			"\t}",
+			"};",
+			"",
+			"export default reducer;",
+			""
+		],
+		"description": "New reducer."
+	},
+	"REDUX_SELECTOR": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "rsel",
+		"body": [
+			"import { Map } from \"immutable\";",
+			"import { $1_CONTEXT } from \"./constants\";",
+			"",
+			"export const get$2 = state => {",
+  			"\tconst data = state.getIn($1_CONTEXT());",
+			"",
+  			"return Map({",
+    		"\tmessage: data.get(\"message\"),",
+  			"});",
+			"};",
+			""
+		],
+		"description": "Reducer selector"
+	}
+}
